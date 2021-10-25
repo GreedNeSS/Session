@@ -27,13 +27,17 @@ class Client {
 
 	static async getInstance(req, res) {
 		const client = new Client(req, res);
-		await Session.restore(client);
+		try {
+			await Session.restore(client);
+		} catch (error) {
+			console.log(error);
+		}
 		return client;
 	}
 
 	parseCookie() {
 		const { req } = this;
-		const cookie = req.headers;
+		const cookie = req.headers.cookie;
 		if (!cookie) return;
 		const items = cookie.split(';');
 		for (const item of items) {
@@ -53,7 +57,9 @@ class Client {
 	}
 
 	deleteCookie(name) {
-		this.preparedCookie.push(name + COOKIE_DELETE + this.host);
+		if (name === this.token) {
+			this.preparedCookie.push('token' + COOKIE_DELETE + this.host);
+		}
 	}
 
 	sendCookie() {

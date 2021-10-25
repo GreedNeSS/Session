@@ -1,0 +1,19 @@
+{
+  "name": "session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "'./JavaScript/server.js'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreedNeSS/Session.git"
+  },
+  "author": "GreedNeSS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreedNeSS/Session/issues"
+  },
+  "homepage": "https://github.com/GreedNeSS/Session#readme"
+}
