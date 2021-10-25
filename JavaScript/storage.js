@@ -7,8 +7,6 @@ const v8 = require('v8');
 
 const PATH = `${__dirname}/sessions`;
 
-// console.log({ PATH: path.win32.join(__dirname, '/sessions') });
-
 const safePath = fn => (token, ...args) => {
 	const callback = args[args.length - 1];
 	if (typeof token !== 'string') {
